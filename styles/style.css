@@ -33,15 +33,12 @@ body{
 .main{
   background-color: lightgreen;
   height: 50vh;
-  display: flow-root;
-  padding: 0 15px;
+  display: flex; /* 플렉스를 줄 때 부모 컨테이너 박스한테 준다 */
+  flex-direction: row;
+  align-items: flex-end;
   
 }
 
-.group {
-  margin: 0 15px;
-  float: left;
-}
 
 .group1{
   background-color: red;
@@ -74,3 +71,4 @@ body{
   background-color: purple;
   height: 15vh;
 }
+
