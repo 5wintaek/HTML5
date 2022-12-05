@@ -1,9 +1,13 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./fontello.css);
+
 /* 기본스타일 */
 *,*::before, *::after{
   box-sizing: border-box;
 }
+
+
 
 /* 본문 스타일 */
 body{
@@ -20,10 +24,58 @@ body{
 
 /* 헤더 */
 .header{
-  background-color: pink;
+  background-color: #fff;
   padding: 0 30px;
   height: 15vh;
+  border-radius: 0 0 15px 15px;
 }
+
+.member{
+  background-color: pink;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  /* 로우 방향인지 컬럼방향인지 코드레벨에서 체크하기위해 */
+}
+
+
+/* 우선순위 규칙 */
+/* li ( Type selelctor - 1점 */
+/* .first ( class selelctor - 10점 */
+/* #first ( id selelctor - 100점 */
+
+/* member -> 10점 , li -> 1점, ::before - 1점 */
+/* .member li::before{
+  content: ":";
+} */
+
+/* li->1점, .first -> 10점, ::before -> 1점 */
+/* 보통 #아이디 를 주고 쓰진 않는다*/
+/* class selector 를 쓰고 type selector를 준다. 보통은!*/
+/* .member .first::before{
+  content: "";
+} */
+
+/* 맴버에 포함된 li 자식중에 첫번째 자식을 줌
+.member li:first-child::before{
+  content: "";
+} */
+
+/* 3번째 아이템부터 뒤로 몽땅 선택하겠다는 뜻 */
+/* -n+1 앞에서부터 첫번째만 선택*/
+/* .member li:nth-child(n + 2)::before {
+  content: ":";
+  background-color: skyblue;
+} */
+
+/* odd : 홀수 */
+/* even : 짝수 */
+/* .member li:nth-child(even){
+  content: ":";
+  background-color: skyblue;
+} */
+
+
 /* 비주얼 */
 .visual{
   background-color: orange;
