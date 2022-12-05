@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  border: 1px solid black;
+  padding: 40px;
+  
+}
