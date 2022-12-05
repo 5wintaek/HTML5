@@ -58,20 +58,25 @@ body{
 /* li->1점, .first -> 10점, ::before -> 1점 */
 /* 보통 #아이디 를 주고 쓰진 않는다*/
 /* class selector 를 쓰고 type selector를 준다. 보통은!*/
-/* .member .first::before{
-  content: "";
+/* .first::before{
+  content: "" !important
 } */
 
-/* 맴버에 포함된 li 자식중에 첫번째 자식을 줌
-.member li:first-child::before{
+/* 맴버에 포함된 li 자식중에 첫번째 자식을 줌 */
+/* .member li:first-child::before{
   content: "";
 } */
 
 /* 3번째 아이템부터 뒤로 몽땅 선택하겠다는 뜻 */
 /* -n+1 앞에서부터 첫번째만 선택*/
-/* .member li:nth-child(n + 2)::before {
+/* .member li:nth-child(n + 2)::before { 
   content: ":";
   background-color: skyblue;
+} */
+
+/* .member li:nth-child(n+4):before{
+  content: "2n";
+  background-color: aqua;
 } */
 
 /* odd : 홀수 */
@@ -81,14 +86,18 @@ body{
   background-color: skyblue;
 } */
 
+/* text-transform: uppercase; 글자를 대문자로 변경*/
+/* text-transform: capitalize; 글자를 소문자로 변경 */
+
+
 .member a {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 /* 비주얼 */
 .visual{
   background-color: orange;
-  height: 10vh;
+  height: 10vh; 
 }
 /* 메인 */
 .main{
@@ -125,6 +134,7 @@ body{
 .slogan{
   background-color: skyblue;
   height: 10vh;
+  clear: both;
   
 }
 /* 푸터 */
