@@ -11,7 +11,6 @@
   overflow: hidden;
   /* hidden : 넘어갈떄 넘어가능 영역을 감출지 */
   clip-path: polygon(0 0, 0 0, 0 0);
-  /*  */
 }
 
 /* 기본스타일 */
@@ -36,7 +35,7 @@ body{
   /* 반응형 작업할때 많이 사용 */
   font-size: 1.4rem;
   color: #212121;
-  background: #ccc;
+  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%); 
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
@@ -60,7 +59,7 @@ body{
 /* 로고 */
 .logo{
   position: absolute;
-  top : 15px;
+  top : 45px;
   left: 60px;
 }
 
@@ -71,7 +70,7 @@ body{
   /* 블록 안에있는 inline 박스들을 설정해주는것 */
   padding: 4px 0;
   /* position 속성 활용하여 member영역을 오른쪽으로 이동 */
-  position: relative;
+  /* position: relative; */
   transform: translate(10px);
   
 } 
@@ -91,6 +90,60 @@ body{
 
 .divider{
   margin-right: 4px;
+}
+
+/* 메인메뉴 */
+.navigation{
+  padding-bottom: 80px;
+}
+.menu {
+  /* currentcolor : inherit 랑 같다 */
+  border-top: 2px solid currentColor; 
+  /* 리니어 그라디언트는 벽지에 효과 주기 */
+  background: #e85e2c linear-gradient(
+      to bottom,
+      #1e5799 0%,
+      #ef9126 0%,
+      #e85e2c 35%,
+      #e85e2c 70%,
+      #ef9126 100%);
+  border-radius: 0 0 5px 5px;
+  /* flow-root를 이용해서 부모의 높이를 찾아줌 */
+  /* height를 넣어줌으로써 flow-root 없어도됨 */
+  /* display: flow-root; */
+  padding-left: 230px;
+  height: 47px;
+}
+
+.menu-item{
+  /* background-color: aqua; */
+  /* float 쓰면 부모 높이 잃어버림 flow-root 사용해서 찾아준다 */
+  float: left;
+  border-left: 2px solid #FFF;
+}
+
+.menu-button{
+  border: 0;
+  /* transparen 투명 */
+  background-color: transparent;
+  padding: 0 23px;
+  line-height: 45px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  /* x y 블러처리값 색깔 */
+  text-shadow: 1px 1px 5px #000, -1px -1px 5px #000;
+  
+}
+
+
+.sub-menu{
+  background-color: pink;
+  /* 좌표 바꿔가면서 배치할려고 absolute 로 배치 */
+  position: absolute;
+  /* 임시로 숨겨줌 is-active 사용하면 돌아오게끔  */
+  display: none;
+  
 }
 
 /* 비주얼 */
@@ -137,6 +190,7 @@ body{
 /* 푸터 */
 .footer{
   background-color: gray;
+  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%); 
 }
 
 .footer-inner{
