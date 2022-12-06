@@ -1,8 +1,12 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 /* 기본스타일 */
-*, *::before{
+*, *::before, *::after{
   box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
 }
 
 /* 링크 스타일 */
@@ -14,6 +18,9 @@ a{
 
 /* 본문 스타일 */
 body{
+  /* em : 부모로 부터 상속받은 단위로 게산 , rem : root를 기준으로 상속받음 단위 사용해보기 */
+  /* 반응형 작업할때 많이 사용 */
+  font-size: 1.4rem;
   color: #212121;
   background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
@@ -48,19 +55,22 @@ body{
   text-align: right;
   /* 블록 안에있는 inline 박스들을 설정해주는것 */
   padding: 4px 0;
-}
+  /* position 속성 활용하여 member영역을 오른쪽으로 이동 */
+  position: relative;
+  transform: translate(10px);
+  
+} 
 
 .member li{
-  /* background-color: pink; */
+  /* background-color: aqua; */
   display: inline-block;
-  /* padding 넣어보면서 실습해보기 inline-block 과 inline *
-  /* 박스가 border-box로 처리되어 있어서 padding값은 height속성에 포함됨   */
-  /* 따라서 box-sizing을 제거해보거나 height 값은 padding 보다 높게 준다 */
 }
 
+
+
 .member a{
-  background-color: coral;
-  padding: 5px;
+  text-transform: uppercase;
+  padding: 6px 10px;
   display: inherit;
 }
 
