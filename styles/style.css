@@ -3,11 +3,15 @@
 
 /* 숨김 컨텐츠 */
 .a11y-hidden{
-  background-color: yellow;
+  background-color: red;
   position: absolute;
-  /* header를 relative를 기준으로줘서 header기준점 */
-  top: -10px;
-  /* top 을 줌으로써 완전히 숨겨버린다. DOM-TREE상에는 존재하기 떄문에 스크린리더에서 읽을수있다. */
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  /* hidden : 넘어갈떄 넘어가능 영역을 감출지 */
+  clip-path: polygon(0 0, 0 0, 0 0);
+  /*  */
 }
 
 /* 기본스타일 */
