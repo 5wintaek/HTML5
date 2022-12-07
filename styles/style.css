@@ -97,7 +97,7 @@ body{
 
 /* 메인메뉴 */
 .navigation{
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 .menu {
   /* currentcolor : inherit 랑 같다 */
@@ -158,12 +158,14 @@ body{
 }
 
 .sub-menu{
-  background-color: pink;
+  /* background-color: pink; */
   /* 좌표 바꿔가면서 배치할려고 absolute 로 배치 */
   position: absolute;
   /* 임시로 숨겨줌 is-active 사용하면 돌아오게끔  */
   top : 47px;
   display: none; 
+  padding: 4px 0;
+  
 }
 /* li 기준으로 realative배치  */
 .menu-html, .menu-css, .menu-standards{
@@ -182,7 +184,7 @@ body{
 
 .sub-menu li{
   display: inline-block;
-  background-color: gold;
+
 }
 
 /* 아이콘 링크 */
@@ -202,11 +204,22 @@ body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 /* hover : 마우스 올리면 변화 */
+/* focus : 키보드 올리면 변화 */
 .sub-menu a:hover::before,
 .sub-menu a:focus::before{
   content: '\e801'; 
+}
+
+.sub-menu a:hover,
+.sub-menu a:focus{
+  color: red;
+}
+
+.sub-menu a{
+  /* background-color: aqua; */
+  display: inline-block;
+  padding: 6px 0;
 }
 
 /* 비주얼 */
