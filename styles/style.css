@@ -33,10 +33,17 @@ a{
 body{
   /* em : 부모로 부터 상속받은 단위로 게산 , rem : root를 기준으로 상속받음 단위 사용해보기 */
   /* 반응형 작업할때 많이 사용 */
-  font-size: 1.4rem;
   color: #212121;
-  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%); 
+  font-size: 1.4rem;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  /* background-color: #ccc;
+  background-image: url("./images/bg_flower.png"), 
+  linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: 50% 0%, 0 0; */
+  background:  url("./images/bg_flower.png")  no-repeat  50% 0%,
+  #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%) 
+  repeat 0 0;
 }
 
 /* 레이아웃 */
@@ -145,6 +152,7 @@ body{
   text-shadow: 1px 1px 5px #000, -1px -1px 5px #000;
 }
 
+
 /* 버튼의 텍스트 / (클래스2개)구체성 점수 ->20점 */
 /* 부모인 li가 is-active란 클래스를 가질떄 발동 */
 .is-active .menu-button{
@@ -184,7 +192,6 @@ body{
 
 .sub-menu li{
   display: inline-block;
-
 }
 
 /* 아이콘 링크 */
@@ -227,31 +234,34 @@ body{
 @keyframes moveEffect{
   0%{
     font-size: 12px;
-    color: rgba(0, 0, 0, 0.2);
+    color: hsla(0, 0%, 0%, 0);
     transform: translate(0,0);
   }
   100%{
     font-size: 24px;
-    color: rgba(0, 0, 0, 1);
+    color: hsla(0, 0%, 0%, 1);
     transform: translate(400px,75px);
   }
 }
 
 
 .visual{
-  background-color: pink;
+  
+  /* height 를 조정하여 박스 위치 조정 */
+  /* 마진이건 패딩이건 reflow 효과 발생(성능저하) */
   height: 120px;
   position: relative;
 }
 
 .visual-text{
   /* 글자크기만큼 줄어들기 떄문에 스크롤 밖으로 나가지 않는다. */
-  display: inline-block;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: aqua;
   animation-name: moveEffect;
   animation-duration: 2000ms;
+  animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  
+  position: absolute;
 }
 /* 메인 */
 .main{
