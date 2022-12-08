@@ -244,24 +244,52 @@ body{
   }
 }
 
+@keyframes fadeEffect{
+  0%{ opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100%{opacity: 1;
+  }
+}
+
 
 .visual{
-  
   /* height 를 조정하여 박스 위치 조정 */
   /* 마진이건 패딩이건 reflow 효과 발생(성능저하) */
   height: 120px;
   position: relative;
 }
+/* 앞뒤에 span 요소  */
+.visual::before,
+.visual::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  animation: fadeEffect 2000ms infinite alternate;
+}
+
+.visual::before{
+  background: url(./images/ani_flower_01.png) no-repeat  0 -10px, 
+  url(./images/ani_flower_02.png) no-repeat 600px 0;
+}
+.visual::after{
+  /* background-color: pink; */
+  background: url(./images/ani_flower_03.png) no-repeat 300px 0,
+  url(./images/ani_flower_04.png) no-repeat 800px 0;
+  animation-delay: 1000ms;
+}
 
 .visual-text{
   /* 글자크기만큼 줄어들기 떄문에 스크롤 밖으로 나가지 않는다. */
   font-family: Georgia, 'Times New Roman', Times, serif;
-  animation-name: moveEffect;
-  animation-duration: 2000ms;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-  
-  position: absolute;
+  animation-name: moveEffect 400ms ease-in-out forwards;
+  position: relative;
+  z-index: 1;
 }
 /* 메인 */
 .main{
