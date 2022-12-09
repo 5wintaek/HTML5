@@ -1,6 +1,7 @@
 @import url(./fontello.css);
 @import url(./normalize.css);
 @import url(./reset.css);
+/* 어떤상황에서도 화면에 보이지 않게끔 하는것 */
 .a11y-hidden,
 .legend {
   background-color: red;
@@ -10,6 +11,7 @@
   margin: -1px;
   overflow: hidden;
   /* hidden : 넘어갈떄 넘어가능 영역을 감출지 */
+  /* clip-path 사용해도 보일때가 있어서 overflow:hidden 도 같이 사용하는걸 권장 */
   clip-path: polygon(0 0, 0 0, 0 0);
   /*  */
 }
@@ -407,6 +409,40 @@ body {
   color: orangered;
 }
 
+.validation-list {
+  /* background-color: yellow; */
+  margin-top: 25px;
+}
+
+.validation-list li {
+  /* line-height: 40px; */
+  margin-top: 10px;
+}
+
+/* a쪽에 padding과 을 줘야 전부다 링크클릭*/
+.validation-list a {
+  display: block;
+  /* padding: 30px; */
+  background: url(./images/validation_icon.png) no-repeat 25px 50%, #ccc linear-gradient(to bottom, #ccc, #eee);
+  padding: 8px 45px;
+  /* line-height: 40px; */
+  border-radius: 30px;
+  border: 1px solid #212121;
+}
+
+/* before에 url 삽입가능
+.validation-list a::before {
+  content: url(./images/validation_icon.png);
+  버티컬이라인은 inline에 줄 수 있다.
+  vertical-align: middle;
+} */
+
+/* 마우스와 키보드로 접근할때 글자색깔 빨강색 */
+.validation-list a:hover,
+.validation-list a:focus {
+  color: red;
+}
+
 /* 슬로건 */
 .slogan {
   background-color: skyblue;
@@ -415,7 +451,6 @@ body {
 /* 푸터 */
 .footer {
   background-color: gray;
-  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%);
 }
 
 .footer-inner {
