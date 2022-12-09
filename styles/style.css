@@ -1,7 +1,8 @@
 @import url(./fontello.css);
 @import url(./normalize.css);
 @import url(./reset.css);
-.a11y-hidden{
+.a11y-hidden,
+.legend {
   background-color: red;
   position: absolute;
   width: 1px;
@@ -14,47 +15,51 @@
 }
 
 /* 기본스타일 */
-*, *::before, *::after{
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html{
+html {
   font-size: 10px;
 }
 
 /* 링크 스타일 */
-a{
+a {
   color: inherit;
   text-decoration: none;
 }
 
-
 /* 본문 스타일 */
-body{
+body {
   /* em : 부모로 부터 상속받은 단위로 게산 , rem : root를 기준으로 상속받음 단위 사용해보기 */
   /* 반응형 작업할때 많이 사용 */
   color: #212121;
   font-size: 1.4rem;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   /* background-color: #ccc;
   background-image: url("./images/bg_flower.png"), 
   linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%);
   background-repeat: no-repeat, repeat;
   background-position: 50% 0%, 0 0; */
-  background:  url("./images/bg_flower.png")  no-repeat  50% 0%,
-  #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%) 
-  repeat 0 0;
+  background: url("./images/bg_flower.png") no-repeat 50% 0%, #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%) repeat 0 0;
 }
 
 /* 레이아웃 */
 /* 선택자 그룹핑 */
-.header, .visual, .main, .slogan, .footer-inner{
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
   width: 940px;
   margin: 0 auto;
-} 
+}
 
 /* 헤더 */
-.header{
+.header {
   background-color: #fff;
   padding: 0 30px;
   border-radius: 0 0 15px 15px;
@@ -64,15 +69,15 @@ body{
 }
 
 /* 로고 */
-.logo{
+.logo {
   position: absolute;
-  top : 45px;
+  top: 45px;
   left: 60px;
   z-index: 1;
 }
 
 /* 텍스트링크 모음 */
-.member{
+.member {
   /* background-color: aqua; */
   text-align: right;
   /* 블록 안에있는 inline 박스들을 설정해주는것 */
@@ -81,42 +86,33 @@ body{
   /* position: relative; */
   /* right : -10px */
   transform: translate(10px);
-  
-} 
-
-.member li{
-  /* background-color: aqua; */
-  display: inline-block;
-  
 }
 
-.member a{
+.member li {
+  /* background-color: aqua; */
+  display: inline-block;
+}
+
+.member a {
   /* background-color: aqua; */
   text-transform: uppercase;
   padding: 6px 10px;
   display: inherit;
-  
 }
 
-.divider{
+.divider {
   margin-right: 4px;
 }
 
 /* 메인메뉴 */
-.navigation{
+.navigation {
   padding-bottom: 40px;
 }
 .menu {
   /* currentcolor : inherit 랑 같다 */
-  border-top: 2px solid currentColor; 
+  border-top: 2px solid currentColor;
   /* 리니어 그라디언트는 벽지에 효과 주기 */
-  background: #e85e2c linear-gradient(
-      to bottom,
-      #1e5799 0%,
-      #ef9126 0%,
-      #e85e2c 35%,
-      #e85e2c 70%,
-      #ef9126 100%);
+  background: #e85e2c linear-gradient(to bottom, #1e5799 0%, #ef9126 0%, #e85e2c 35%, #e85e2c 70%, #ef9126 100%);
   border-radius: 0 0 5px 5px;
   /* flow-root를 이용해서 부모의 높이를 찾아줌 */
   /* height를 넣어줌으로써 flow-root 없어도됨 */
@@ -126,20 +122,20 @@ body{
   position: relative;
 }
 /* li를 기준으로 배치 */
-.menu > li:nth-child(-n+3){
+.menu > li:nth-child(-n + 3) {
   position: relative;
 }
 
-.menu-item{
+.menu-item {
   /* background-color: aqua; */
   /* float 쓰면 부모 높이 잃어버림 flow-root 사용해서 찾아준다 */
   /* 자기자신이 뜨면서 배치 */
   float: left;
-  border-left: 2px solid #FFF;
+  border-left: 2px solid #fff;
 }
 
 /* 버트의 텍스트 / 구체성 점수->10점 */
-.menu-button{
+.menu-button {
   border: 0;
   /* transparen 투명 */
   background-color: transparent;
@@ -152,78 +148,80 @@ body{
   text-shadow: 1px 1px 5px #000, -1px -1px 5px #000;
 }
 
-
 /* 버튼의 텍스트 / (클래스2개)구체성 점수 ->20점 */
 /* 부모인 li가 is-active란 클래스를 가질떄 발동 */
-.is-active .menu-button{
+.is-active .menu-button {
   color: #ff0;
 }
 
-.is-active .menu-button::after{
+.is-active .menu-button::after {
   content: "";
   display: block;
   border-top: 2px solid #212121;
 }
 
-.sub-menu{
+.sub-menu {
   /* background-color: pink; */
   /* 좌표 바꿔가면서 배치할려고 absolute 로 배치 */
   position: absolute;
   /* 임시로 숨겨줌 is-active 사용하면 돌아오게끔  */
-  top : 47px;
-  display: none; 
+  top: 47px;
+  display: none;
   padding: 4px 0;
-  
 }
 /* li 기준으로 realative배치  */
-.menu-html, .menu-css, .menu-standards{
-  left: 0; 
+.menu-html,
+.menu-css,
+.menu-standards {
+  left: 0;
 }
 /* li가 아닌 menu를 기준으로 realtive 배치 */
-.menu-accessibility, .menu-qna, .menu-archive{
+.menu-accessibility,
+.menu-qna,
+.menu-archive {
   right: 0;
 }
-.is-active .sub-menu{
+.is-active .sub-menu {
   /* float : left 로 지정할거여서 block씀 */
   display: block;
   /* 공백문자를 줄바꿈 하지 말아라 */
   white-space: nowrap;
 }
 
-.sub-menu li{
+.sub-menu li {
   display: inline-block;
 }
 
 /* 아이콘 링크 */
-.sub-menu a::before{
-  content: '\e805';
-  font-family: 'fontello';
+.sub-menu a::before {
+  content: "\e805";
+  font-family: "fontello";
   font-weight: normal;
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin-right: .2em;
+  margin-right: 0.2em;
   text-align: center;
   font-variant: normal;
   text-transform: none;
   line-height: 1em;
-  margin-left: .2em;
+  margin-left: 0.2em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 /* hover : 마우스 올리면 변화 */
 /* focus : 키보드 올리면 변화 */
 .sub-menu a:hover::before,
-.sub-menu a:focus::before{
-  content: '\e801'; 
+.sub-menu a:focus::before {
+  content: "\e801";
 }
 
 .sub-menu a:hover,
-.sub-menu a:focus{
-  color: red;
+.sub-menu a:focus {
+  color: #1e5799;
 }
 
-.sub-menu a{
+.sub-menu a {
   /* background-color: aqua; */
   display: inline-block;
   padding: 6px 0;
@@ -231,31 +229,32 @@ body{
 
 /* 비주얼 */
 /* @ = at sign rule */
-@keyframes moveEffect{
-  0%{
+@keyframes moveEffect {
+  0% {
     font-size: 12px;
-    color: hsla(0, 0%, 0%, 0);
-    transform: translate(0,0);
+    color: hsla(0, 0%, 0%, 1);
+    transform: translate(0, 0);
   }
-  100%{
+  100% {
     font-size: 24px;
     color: hsla(0, 0%, 0%, 1);
-    transform: translate(400px,75px);
+    transform: translate(400px, 75px);
   }
 }
 
-@keyframes fadeEffect{
-  0%{ opacity: 1;
+@keyframes fadeEffect {
+  0% {
+    opacity: 1;
   }
   50% {
     opacity: 0;
   }
-  100%{opacity: 1;
+  100% {
+    opacity: 1;
   }
 }
 
-
-.visual{
+.visual {
   /* height 를 조정하여 박스 위치 조정 */
   /* 마진이건 패딩이건 reflow 효과 발생(성능저하) */
   height: 120px;
@@ -263,7 +262,7 @@ body{
 }
 /* 앞뒤에 span 요소  */
 .visual::before,
-.visual::after{
+.visual::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -273,30 +272,32 @@ body{
   animation: fadeEffect 2000ms infinite alternate;
 }
 
-.visual::before{
-  background: url(./images/ani_flower_01.png) no-repeat  0 -10px, 
-  url(./images/ani_flower_02.png) no-repeat 600px 0;
+.visual::before {
+  background: url(./images/ani_flower_01.png) no-repeat 0 -10px, url(./images/ani_flower_02.png) no-repeat 600px 0;
 }
-.visual::after{
+.visual::after {
   /* background-color: pink; */
-  background: url(./images/ani_flower_03.png) no-repeat 300px 0,
-  url(./images/ani_flower_04.png) no-repeat 800px 0;
+  background: url(./images/ani_flower_03.png) no-repeat 300px 0, url(./images/ani_flower_04.png) no-repeat 800px 0;
   animation-delay: 1000ms;
 }
-
-.visual-text{
+.visual-text {
   /* 글자크기만큼 줄어들기 떄문에 스크롤 밖으로 나가지 않는다. */
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  animation-name: moveEffect 400ms ease-in-out forwards;
-  position: relative;
+  background-color: aqua;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  animation: moveEffect 400ms ease-in-out forwards;
+  position: absolute;
+  /* relative 를 사용한 이유는 z-index : 1 사용하려고 사용 */
+  /* position : aboustle 사용 가능 */
+  /* display : inline-block 사용가능 */
   z-index: 1;
 }
 /* 메인 */
-.main{
-  background-color: lightgreen;
-  height: 50vh;
+.main {
+  background-color: #fff;
+  min-height: 450px;
   display: flow-root;
-  padding: 0 15px;
+  padding: 30px 15px;
+  border-radius: 15px 15px 0 0;
 }
 
 .group {
@@ -304,35 +305,94 @@ body{
   float: left;
 }
 
-.group1{
-  background-color: red;
+.group1 {
   width: 250px;
 }
 
-.group2{
+.group2 {
   background-color: blue;
   width: 380px;
   color: white;
 }
 
-.group3{
+.group3 {
   background-color: gold;
   width: 190px;
 }
 
-/* 슬로건 */
-.slogan{
-  background-color: skyblue;
-  height: 10vh;
-  
-}
-/* 푸터 */
-.footer{
-  background-color: gray;
-  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%); 
+/* 로그인 */
+.login {
+  box-shadow: 5px 5px 0 0 #ccc;
+  background: orange radial-gradient(circle at right top, orange, orangered);
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.footer-inner{
+.login-title {
+  color: #ff0;
+  text-indent: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  /* margin-left: 10px; */
+  /* padding-left: 10px; */
+}
+
+.login-form {
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px 5px 0 0;
+  padding: 10px 10px 0 10px;
+}
+
+.login-form fieldset {
+  position: relative;
+}
+
+.user-email {
+  background-color: #1e5799;
+}
+
+.user-pw {
+  background-color: lime;
+}
+
+.login-form label {
+  background-color: salmon;
+  display: inline-block;
+  width: 55px;
+}
+
+.login-form input {
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+}
+
+.login-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.sign {
+  display: flex;
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  padding: 0 10px 10px 10px;
+}
+
+/* 슬로건 */
+.slogan {
+  background-color: skyblue;
+  height: 10vh;
+}
+/* 푸터 */
+.footer {
+  background-color: gray;
+  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 70%, #fff 100%);
+}
+
+.footer-inner {
   background-color: purple;
   height: 15vh;
 }
