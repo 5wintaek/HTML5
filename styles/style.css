@@ -346,39 +346,65 @@ body {
 
 .login-form fieldset {
   position: relative;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px;
 }
 
 .user-email {
-  background-color: #1e5799;
+  margin-bottom: 5px;
 }
 
 .user-pw {
-  background-color: lime;
+  margin-bottom: 5px;
 }
 
 .login-form label {
-  background-color: salmon;
   display: inline-block;
-  width: 55px;
+  width: 4em;
 }
 
 .login-form input {
   width: 90px;
   height: 24px;
   border: 1px solid #aaa;
+  padding: 1px 1px 1px 5px;
+  border-radius: 3px;
 }
 
 .login-button {
   position: absolute;
   top: 0;
   right: 0;
+  height: 53px;
+  background-color: orangered;
+  color: #fff;
+  border: 0;
+  padding: 0 8px;
+  border-radius: 5px;
+  font-size: 13px;
 }
 
 .sign {
   display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   background-color: #fff;
   border-radius: 0 0 5px 5px;
-  padding: 0 10px 10px 10px;
+  padding: 4px 10px;
+}
+
+.sign a {
+  display: block;
+  padding: 6px 0;
+  letter-spacing: -1px;
+}
+
+/* a에 준 이유는 링크면적을 넓히기 위해서*/
+.sign a::before {
+  content: "\e804";
+  font-family: "fontello";
+  margin-right: 8px;
+  color: orangered;
 }
 
 /* 슬로건 */
