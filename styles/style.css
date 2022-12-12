@@ -523,7 +523,7 @@ body {
 }
 
 .form-group {
-  background-color: pink;
+  /* background-color: pink; */
   flex-grow: 1;
   display: flex;
   align-items: center;
@@ -531,6 +531,7 @@ body {
 }
 
 .form-group-label {
+  color: #212121;
   flex-shrink: 0;
   /* white-space: nowrap; */
   margin-right: 10px;
@@ -557,6 +558,84 @@ body {
   width: 100%;
   /* min-width: 0;
   max-width: 100%; */
+}
+
+/* 공지사항 및 자료실 */
+.board {
+  color: #212121;
+  margin-top: 20px;
+  position: relative;
+}
+
+.tab-panel {
+  display: none;
+  /* background-color: aqua; */
+  margin-top: 15px;
+}
+.is-select.tab-panel {
+  display: block;
+}
+
+.board-more {
+  position: absolute;
+  padding: 8px;
+  right: -8px;
+  top: -8px;
+  /* background-color: #1e5799; */
+}
+
+.icon-plus::before {
+  color: hsla(110, 50%, 40%, 1);
+}
+
+.tab-list {
+  /* background-color: lime; */
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+/* 비활성 탭 */
+.tab {
+  border: 1px solid #aaa;
+  background-color: #ccc;
+  border-radius: 5px 5px 0 0;
+  padding: 5px 10px;
+  color: #666;
+}
+
+/* 자기자신이 is-select 가질경우 띄워쓰기 하지않고 붙여서 씀 */
+.is-select.tab {
+  background-color: #fff;
+  color: #e85e2c;
+  border-color: currentColor currentColor #fff currentColor;
+}
+
+.board-list {
+  /* background-color: pink; */
+}
+
+.board-list li {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* 앵커와 time 접근 */
+.board-list a {
+  /* grow를 이용해서 a링크 클릭 확대 */
+  flex-grow: 1;
+  /* background-color: salmon; */
+  /* 줄바꿈 금지 */
+  white-space: nowrap;
+  overflow: hidden;
+  /* 짤리는 부분 ... 랜더링 */
+  text-overflow: ellipsis;
+}
+
+.board-list time {
+  flex-shrink: 0;
+  margin-left: 10px;
 }
 
 /* 슬로건 */
