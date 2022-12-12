@@ -284,7 +284,7 @@ body {
 }
 .visual-text {
   /* 글자크기만큼 줄어들기 떄문에 스크롤 밖으로 나가지 않는다. */
-  background-color: aqua;
+  /* background-color: aqua; */
   font-family: Georgia, "Times New Roman", Times, serif;
   animation: moveEffect 400ms ease-in-out forwards;
   position: absolute;
@@ -409,6 +409,8 @@ body {
   color: orangered;
 }
 
+/* 유효성 검사 배너 */
+
 .validation-list {
   /* background-color: yellow; */
   margin-top: 25px;
@@ -441,6 +443,58 @@ body {
 .validation-list a:hover,
 .validation-list a:focus {
   color: red;
+}
+
+/* 웹 관련 용어 */
+.term {
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.term-title {
+  /* root 글자크기가 10px이여서 15px원함 */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.term-list {
+  background-color: yellow;
+  margin-top: 10px;
+}
+
+.term-list div {
+  background-color: pink;
+  margin-top: 10px;
+  display: flow-root;
+  /* normal flow처럼 흘러가게 하는것 */
+}
+
+.term-list-subject {
+  color: #296897;
+  background-color: lime;
+  float: right;
+  width: 145px;
+}
+
+.term-list-thumbnail {
+  background-color: purple;
+  float: left;
+}
+
+/* img는 inline이여서 , 이미지 아래쪽 여백을 없애기위해 사용  */
+.term-list-thumbnail img {
+  vertical-align: middle;
+}
+
+.term-list-brief {
+  background-color: coral;
+  float: right;
+  /* width 를 주지 않으면 content 크기만큼 상자배치가 되기떄문에 부여 */
+  width: 145px;
 }
 
 /* 슬로건 */
