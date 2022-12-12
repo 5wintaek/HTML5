@@ -470,6 +470,7 @@ body {
   margin-top: 10px;
   display: flow-root;
   /* normal flow처럼 흘러가게 하는것 */
+  /* flow-root 뺴면 div 높이를 가지지 못함 */
 }
 
 .term-list-subject {
