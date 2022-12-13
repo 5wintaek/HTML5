@@ -291,7 +291,7 @@ body {
   position: absolute;
   /* relative 를 사용한 이유는 z-index : 1 사용하려고 사용 */
   /* position : aboustle 사용 가능 */
-  /* display : inline-block 사용가능 */
+  /* display : inline-block  */
   z-index: 1;
 }
 /* 메인 */
@@ -724,20 +724,26 @@ body {
   /* division */
   background-color: yellow;
   overflow: hidden;
-  height: 20px;
+  height: 18px;
+  display: flex;
+  flex-flow: row nowrap;
+  /* gap : flex-item에만 사용가능 */
+  gap: 5px;
+  align-items: center;
   position: absolute;
   right: 0;
   top: 0;
-  display: flex;
 }
 
+/* IR 기법 */
 .event-button {
   width: 19px;
-  height: 100%;
+  height: 18px;
   border: 0;
-  padding: 0;
   background: url(./images/back_forward.png) no-repeat;
-  color: transparent;
+  /* color: transparent; 사용 안하는 이유가 스크린리더가 못읽어줌 */
+  /* padding 을 사용하여 글자를 위로 보내어 안보이게끔 처리*/
+  padding: 18px 0 0 0;
 }
 
 .event-button-next {
@@ -760,6 +766,8 @@ body {
   /* background-color: yellow; */
   border-radius: 15px 15px 15px 15px;
   height: 147px;
+  /* 끝나는 값이 명확하게 알려줘야 끊김현상이 없다. auto는 끊김현상 발생 */
+  padding: 10px 0;
 }
 
 .related-list {
@@ -769,17 +777,22 @@ body {
   border-radius: 15px 15px 15px 15px;
   height: 27px;
   overflow: hidden;
-  padding: 7px 10px;
-  line-height: 1.5;
-  transition-property: height;
-  transition-duration: 2000ms;
-  transition-delay: 0ms, 2000ms;
-  transition-timing-function: ease-in-out;
+  transition: height 400ms 0ms, padding 400ms 400ms;
 }
 
 .related-list li {
-  background-color: yellow;
+  /* background-color: yellow; */
   height: 25px;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0 5px;
+}
+
+.related-list a {
+  /* background-color: pink; */
+  flex-grow: 1;
+  padding: 0 10px;
 }
 .event-brief {
   line-height: 1.5;
