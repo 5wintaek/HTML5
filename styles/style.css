@@ -1,6 +1,7 @@
 @import url(./fontello.css);
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(/module.css);
 /* 어떤상황에서도 화면에 보이지 않게끔 하는것 */
 .a11y-hidden,
 .legend {
@@ -314,11 +315,10 @@ body {
 .group2 {
   /* background-color: blue; */
   width: 380px;
-  color: white;
 }
 
 .group3 {
-  background-color: gold;
+  /* background-color: gold; */
   width: 190px;
 }
 
@@ -610,10 +610,6 @@ body {
   border-color: currentColor currentColor #fff currentColor;
 }
 
-.board-list {
-  /* background-color: pink; */
-}
-
 .board-list li {
   display: flex;
   flex-flow: row nowrap;
@@ -636,6 +632,134 @@ body {
 .board-list time {
   flex-shrink: 0;
   margin-left: 10px;
+}
+
+/* 새소식 */
+.news {
+  /* background-color: yellow; */
+  margin-top: 25px;
+  position: relative;
+  /* 더보기 기준점 */
+}
+
+.news-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.news::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 80%;
+  height: 1px;
+  background: #aaa linear-gradient(to right, #ccc, #fff);
+}
+
+.news-link {
+  /* <a>inline 성질이니 block 성질로 바꿔줌 */
+  display: block;
+  /* background-color: pink; */
+}
+
+.news-item {
+  /* background-color: #1e5799; */
+  margin-top: 35px;
+  /* 패딩으로 제목,날짜,내용 위치를 한번에 옮김 */
+  padding-left: 130px;
+  /* 썸네일을 움직임을 기준으로 정함 */
+  position: relative;
+}
+
+.news-item-title {
+  font-weight: 600;
+  /* background-color: coral; */
+}
+
+.news-item-date {
+  /* time은 inline속성이라 block을 부여 함으로써 마진이 들어간다 */
+  /* background-color: lightblue; */
+  display: block;
+  margin: 5px 0 10px;
+}
+
+.news-item-brief {
+  /* background-color: darksalmon; */
+  line-height: 1.5;
+}
+
+.news-item-thumbnail {
+  /* background-color: brown; */
+  position: absolute;
+  /* 디자인적으로 이미지와 텍스트 시작하는 라인이 일치하게 하려고 top좌표 줌 */
+  top: 2px;
+  left: 0;
+  /* absoulte  */
+  text-align: center;
+}
+
+.news-item-thumbnail img {
+  /* img는 inline-block 속성이라 margin,padding 속성부여가능 */
+  box-shadow: 0 15px 10px 5px #ccc;
+  /* 그림자에 글씨랑 겹쳐 보여서 margin 줌 */
+  margin-bottom: 15px;
+}
+
+.news-more {
+  position: absolute;
+  /* background-color: aqua; */
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
+
+/* 신규 이벤트 및 관련 사이트 */
+.event {
+  border-bottom: 1px solid #aaa;
+  position: relative;
+}
+
+.event-button-wrapper {
+  /* division */
+  background-color: yellow;
+  overflow: hidden;
+  height: 18px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+}
+
+.event-button {
+  width: 19px;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  background: url(./images/back_forward.png) no-repeat;
+  color: transparent;
+}
+
+.event-button-next {
+  background-position: right;
+}
+
+.event-thumbnail,
+.event-brief {
+  margin: 10px 0;
+}
+
+.event-brief {
+  line-height: 1.5;
+}
+
+.related {
+  margin-top: 10px;
+}
+
+.related-list {
+  background-color: #fff;
+  margin-top: 10px;
 }
 
 /* 슬로건 */
