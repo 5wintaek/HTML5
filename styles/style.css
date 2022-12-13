@@ -724,7 +724,7 @@ body {
   /* division */
   background-color: yellow;
   overflow: hidden;
-  height: 18px;
+  height: 20px;
   position: absolute;
   right: 0;
   top: 0;
@@ -749,16 +749,43 @@ body {
   margin: 10px 0;
 }
 
+.event-thumbnail {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+/* 리스트가 마우스 움직임과 탭키(focus) 받았다면 */
+.related-list:hover,
+.related-list:focus {
+  /* background-color: yellow; */
+  border-radius: 15px 15px 15px 15px;
+  height: 147px;
+}
+
+.related-list {
+  background-color: #fff;
+  margin-top: 10px;
+  border: 1px solid #aaa;
+  border-radius: 15px 15px 15px 15px;
+  height: 27px;
+  overflow: hidden;
+  padding: 7px 10px;
+  line-height: 1.5;
+  transition-property: height;
+  transition-duration: 2000ms;
+  transition-delay: 0ms, 2000ms;
+  transition-timing-function: ease-in-out;
+}
+
+.related-list li {
+  background-color: yellow;
+  height: 25px;
+}
 .event-brief {
   line-height: 1.5;
 }
 
 .related {
-  margin-top: 10px;
-}
-
-.related-list {
-  background-color: #fff;
   margin-top: 10px;
 }
 
