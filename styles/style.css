@@ -805,22 +805,30 @@ body {
 /* 인가사이트  */
 
 .favorite {
-  background-color: pink;
+  /* background-color: pink; */
   position: relative;
 }
 
 .favorite-list {
-  background-color: yellow;
+  /* background-color: yellow; */
   /* 앞에 번호 없애기 */
   list-style-type: none;
 }
 
 .favorite-list li {
+  background-color: pink;
   margin-top: 10px;
+  line-height: 1.5;
+  counter-increment: number;
+}
+
+.favorite-list a {
+  display: inline-block;
+  /* background-color: purple; */
 }
 
 .favorite-list li::before {
-  content: "";
+  content: counter(number);
   background-color: #aaa;
   color: #fff;
   padding: 1px 6px;
@@ -830,20 +838,29 @@ body {
   display: inline-block;
   width: 1.5em;
   text-align: center;
-  line-height: 1.5;
 }
 
-.no1::before {
-  content: "1";
+.up,
+.stop,
+.down {
+  display: inline-block;
+  /* background-color: pink; */
+  width: 20px;
+  height: 11px;
+  background: url(./images/rank.png) no-repeat;
+  /* 배경 부분에서 윗쪽만 보인다 no-repaet 사용 */
+  position: absolute;
+  right: 0;
 }
-.no2::before {
-  content: "2";
+
+.down {
+  background-position: 0 100%;
+  /* background-position: 100%; */
 }
-.no3::before {
-  content: "3";
-}
-.no4::before {
-  content: "4";
+
+.stop {
+  background-position: 0 50%;
+  /* background-position:  50%; */
 }
 
 .favorite-more {
