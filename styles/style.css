@@ -878,7 +878,7 @@ body {
 
 /* 슬로건 */
 .slogan {
-  background-color: skyblue;
+  /* background-color: skyblue; */
   position: relative;
   padding: 15px 100px 15px 180px;
 }
@@ -894,7 +894,7 @@ body {
 }
 
 .slogan-title {
-  background: pink;
+  /* background: pink; */
   width: 110px;
   height: 83px;
   position: absolute;
@@ -921,10 +921,50 @@ body {
 
 /* 푸터 */
 .footer {
-  background-color: gray;
+  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
 }
 
 .footer-inner {
-  background-color: purple;
-  height: 15vh;
+  /* background-color: pink; */
+  display: flex;
+  flex-flow: row nowrap;
+  /* gap 은 margin처럼 박스값의 포함이 안된다 */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  /* background-color: #1e5799; */
+  /* padding: 20px 15px; */
+  width: 150px;
+  padding: 20px 0 0 35px;
+}
+
+.footer-inner-wrapper {
+  /* background-color: lime; */
+  /* 넓어지면서 옆에 뱃지를 밀어냄 */
+  flex: 1 1 auto;
+  /* flex : grow shinrk basis */
+}
+
+.guide-list {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #666;
+  color: white;
+  padding: 4px 45px;
+  justify-content: space-between;
+  border-radius: 30px;
+}
+
+.guide-list a {
+  display: block;
+  padding: 6px 10px;
+}
+
+.address,
+.copyright {
+  display: block;
+  font-size: 13px;
+  margin-top: 10px;
 }
