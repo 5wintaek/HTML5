@@ -816,15 +816,17 @@ body {
 }
 
 .favorite-list li {
-  background-color: pink;
+  /* background-color: pink; */
   margin-top: 10px;
   line-height: 1.5;
   counter-increment: number;
+  position: relative;
 }
 
 .favorite-list a {
-  display: inline-block;
+  /* flex-grow: 1; */
   /* background-color: purple; */
+  /* background-color: aqua; */
 }
 
 .favorite-list li::before {
@@ -843,23 +845,27 @@ body {
 .up,
 .stop,
 .down {
-  display: inline-block;
+  /* display: inline-block; */
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+  right: 0;
   /* background-color: pink; */
   width: 20px;
   height: 11px;
-  background: url(./images/rank.png) no-repeat;
+  background: url(./images/rank.png) no-repeat 100% 0;
+  margin-left: auto;
   /* 배경 부분에서 윗쪽만 보인다 no-repaet 사용 */
-  position: absolute;
-  right: 0;
+  /* position: absolute; */
 }
 
 .down {
-  background-position: 0 100%;
+  background-position: 100% 100%;
   /* background-position: 100%; */
 }
 
 .stop {
-  background-position: 0 50%;
+  background-position: 100% 48%;
   /* background-position:  50%; */
 }
 
