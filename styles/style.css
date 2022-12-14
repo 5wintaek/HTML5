@@ -661,7 +661,7 @@ body {
 }
 
 .news-item-title {
-  /* background-color: #1e5799; */
+  font-weight: 500;
 }
 
 .news-item-date {
@@ -756,10 +756,76 @@ body {
   padding-bottom: 10px;
 }
 
+/* 인가사이트 */
+
+.favorite {
+  /* background-color: pink; */
+  position: relative;
+}
+
+.favorite-title {
+  font-weight: 700;
+}
+
+.favorite-list {
+  /* background-color: #1e5799; */
+  list-style-type: none;
+}
+
+.favorite-list li {
+  background-color: pink;
+  display: flex;
+  flex-flow: row nowrap;
+  /* space-between 안되는 이유는 li 안에 가상요소도 들어가 있어서 안된다 */
+  align-items: center;
+  margin-top: 10px;
+  counter-increment: number;
+}
+
+/* justfiy-content로 사이를 늘리지 못하니 flex-grow 사용 */
+.favorite-list a {
+  flex-grow: 1;
+}
+
+.favorite-list li::before {
+  content: counter(number);
+  color: #fff;
+  display: inline-block;
+  border-radius: 3px;
+  width: 1.3em;
+  background-color: #aaa;
+  text-align: center;
+  line-height: 1.5;
+  margin-right: 5px;
+}
+
+.up,
+.down,
+.stop {
+  /* inline-block , width, height 설정 안하면 이미지 보이지 않음 */
+  display: inline-block;
+  width: 20px;
+  height: 11px;
+  background: lime url(./images/rank.png) no-repeat 50% 0;
+}
+
+.stop {
+  background-position: 50% 47%;
+}
+
+.down {
+  background-position: 50% 100%;
+}
+
+.favorite-more {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 /* 슬로건 */
 .slogan {
   background-color: skyblue;
-  height: 10vh;
 }
 /* 푸터 */
 .footer {
@@ -768,5 +834,4 @@ body {
 
 .footer-inner {
   background-color: purple;
-  height: 15vh;
 }
