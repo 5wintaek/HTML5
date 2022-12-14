@@ -884,7 +884,7 @@ body {
 
 .footer-inner-wrapper {
   background-color: pink;
-  /* flex-grow: 1 1 auto; */
+  flex: 1 1 auto;
 }
 
 .guide-list {
