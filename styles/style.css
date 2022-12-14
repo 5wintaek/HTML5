@@ -2,153 +2,160 @@
 @import url(./reset.css);
 @import url(./fontello.css);
 
-/* 기본스타일 */
-*,*::before, *::after{
+/* 기본 스타일 */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-/* 링크스타일 */
-a{
+html {
+  font-size: 10px;
+}
+
+/* 링크 스타일 */
+a {
   color: inherit;
   text-decoration: none;
 }
 
-
 /* 본문 스타일 */
-body{
+body {
   color: #212121;
-  background: #ffc;
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 1.4rem;
+  background: #ccc;
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
 /* 레이아웃 */
-/* 선택자 그룹핑 */
-.header, .visual, .main, .slogan, .footer-inner{
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
   width: 940px;
   margin: 0 auto;
-} 
+}
 
 /* 헤더 */
-.header{
-  background-color: #fff;
+.header {
+  background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px;
 }
 
-.member{
+.member {
   background-color: pink;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  /* 로우 방향인지 컬럼방향인지 코드레벨에서 체크하기위해 */
-}
-
-
-/* 우선순위 규칙 */
-/* li ( Type selelctor - 1점 */
-/* .first ( class selelctor - 10점 */
-/* #first ( id selelctor - 100점 */
-
-/* member -> 10점 , li -> 1점, ::before - 1점 */
-/* .member li::before{
-  content: ":";
-} */
-
-/* li->1점, .first -> 10점, ::before -> 1점 */
-/* 보통 #아이디 를 주고 쓰진 않는다*/
-/* class selector 를 쓰고 type selector를 준다. 보통은!*/
-/* .first::before{
-  content: "" !important
-} */
-
-/* 맴버에 포함된 li 자식중에 첫번째 자식을 줌 */
-/* .member li:first-child::before{
-  content: "";
-} */
-
-/* 3번째 아이템부터 뒤로 몽땅 선택하겠다는 뜻 */
-/* -n+1 앞에서부터 첫번째만 선택*/
-/* .member li:nth-child(n + 2)::before { 
-  content: ":";
-  background-color: skyblue;
-} */
-
-/* .member li:nth-child(n+4):before{
-  content: "2n";
-  background-color: aqua;
-} */
-
-/* odd : 홀수 */
-/* even : 짝수 */
-/* .member li:nth-child(even){
-  content: ":";
-  background-color: skyblue;
-} */
-
-/* text-transform: uppercase; 글자를 대문자로 변경*/
-/* text-transform: capitalize; 글자를 소문자로 변경 */
-
-
-.member a {
-  text-transform: uppercase;
 }
 
 /* 비주얼 */
-.visual{
-  background-color: orange;
-  height: 10vh; 
+.visual {
+  height: 120px;
 }
 /* 메인 */
-.main{
-  background-color: lightgreen;
+.main {
+  background: #fff;
   min-height: 450px;
-  display: flex; /* 플렉스를 줄 때 부모 컨테이너 박스한테 준다 */
-  flex-flow: row nowrap;
-  justify-content:space-between;
-  align-items: flex-start;
-  padding: 30px;
+  display: flow-root;
+  padding: 30px 15px;
 }
 
+.group {
+  float: left;
+  margin: 0 15px;
+}
 
-
-.group1{
-  background-color: red;
+.group1 {
   width: 250px;
-  /* 1000px 기준으로에서 200/2000
-   100px */
 }
 
-.group2{
-  background-color: blue;
+.group2 {
   width: 380px;
-  color: white;
 }
-
-.group3{
-  background-color: gold;
+.group3 {
   width: 190px;
 }
 
+/* 신규 이벤트 및 관련 사이트 */
+.gradient-effect {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px;
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+}
+
+.text-xl {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.accent-color {
+  color: #a52a2a;
+}
+
+.margin-top-default {
+  margin-top: 20px;
+}
+
+.event {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.event-title {
+  background-color: pink;
+}
+
+.event-button-wrapper {
+  /* background-color: yellow; */
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+}
+
+#eventDetail {
+  /* background-color: aqua; */
+}
+
+.event-button {
+  width: 19px;
+  border: 0;
+  height: 18px;
+  padding: 0;
+  text-indent: -9999px;
+  background: aqua url("./images/back_forward.png") no-repeat;
+}
+
+.event-button-next {
+  background-position: 100% 0;
+}
+
+.event-thumbnail,
+.event-brief {
+  margin: 10px 0;
+}
+
+.event-thumbnail img {
+  border: 1px solid #aaa;
+  box-shadow: 5px 5px 0 0 #ccc;
+}
+
+.related {
+  margin-top: 10px;
+}
+
+/* 인기 사이트 */
+
 /* 슬로건 */
-.slogan{
-  background-color: skyblue;
-  height: 10vh;
+.slogan {
+  background: skyblue;
   clear: both;
-  
 }
 /* 푸터 */
-.footer{
-  background-color: gray;
-  width: 940px;
-  margin: 0 auto;
+.footer {
+  background: gray;
 }
-
-.footer-inner{
-  background-color: purple;
-  height: 15vh;
-  position: relative;
-  top: -10px;
-  left:-10px
+.footer-inner {
+  background: silver;
 }
-
