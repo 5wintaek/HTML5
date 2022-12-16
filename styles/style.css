@@ -166,7 +166,7 @@ body {
 .sub-menu {
   /* background-color: pink; */
   /* 좌표 바꿔가면서 배치할려고 absolute 로 배치 */
-  position: absolute;
+  /* position: absolute; */
   /* 임시로 숨겨줌 is-active 사용하면 돌아오게끔  */
   top: 47px;
   display: none;
